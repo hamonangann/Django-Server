@@ -34,9 +34,7 @@ ALLOWED_HOSTS = [
 ]
 
 CSRF_TRUSTED_ORIGINS = [
-    'django-server-production-48b5.up.railway.app',
-    'localhost',
-    '127.0.0.1'
+    'https://django-server-production-48b5.up.railway.app',
 ]
 
 # Application definition
