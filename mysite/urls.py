@@ -16,8 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 import hello.views as hello
+import authpage.urls as authpage
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('hello/', hello.index),
+    path('hallway/', include(authpage))
 ]
