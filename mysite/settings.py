@@ -27,7 +27,17 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv('DEBUG') == 'TRUE'
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = [
+    'django-server-production-48b5.up.railway.app',
+    'localhost',
+    '127.0.0.1'
+]
+
+CSRF_TRUSTED_ORIGINS = [
+    'django-server-production-48b5.up.railway.app',
+    'localhost',
+    '127.0.0.1'
+]
 
 # Application definition
 
