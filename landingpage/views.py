@@ -1,11 +1,11 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404, redirect
 from .models import Konten
 from .forms import KontenForm
 from django.http.response import HttpResponse, HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
-from django.core import serializers
 from django.http import JsonResponse
 import json
+from django.urls import reverse
 
 
 def index(request):
@@ -23,6 +23,8 @@ def add_konten(request):
     response = {'form':form}
     return render(request,'konten_form.html',response)
 
-# @login_required()
-# def delete_konten(request):
-
+@login_required(login_url='/hello')
+def delete_konten(request, idKonten):
+    data = Konten.objects.get(idKonten=idKonten)
+    data.delete()
+    return HttpResponseRedirect(reverse('konten_list.html'))

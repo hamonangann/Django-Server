@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 14,
+            "activePatchIndex": 47,
             "patches": [
                 {
                     "date": 1669995373862,
@@ -64,6 +64,138 @@
                 {
                     "date": 1669995534890,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,8 +7,8 @@\n     <body>\r\n         {% for x in posts %}\r\n         {{x.judulKonten}}\r\n         {{x.thumbnail}}\r\n-        {{}}\r\n+        {{x.isiKonten}}\r\n         {% endfor %}\r\n     </body>\r\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1669996619398,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,8 +5,9 @@\n         </title>\r\n     </head>\r\n     <body>\r\n         {% for x in posts %}\r\n+        <\r\n         {{x.judulKonten}}\r\n         {{x.thumbnail}}\r\n         {{x.isiKonten}}\r\n         {% endfor %}\r\n"
+                },
+                {
+                    "date": 1669996627912,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n         </title>\r\n     </head>\r\n     <body>\r\n         {% for x in posts %}\r\n-        <\r\n+        <div class=\"\"\r\n         {{x.judulKonten}}\r\n         {{x.thumbnail}}\r\n         {{x.isiKonten}}\r\n         {% endfor %}\r\n"
+                },
+                {
+                    "date": 1669996788964,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n         </title>\r\n     </head>\r\n     <body>\r\n         {% for x in posts %}\r\n-        <div class=\"\"\r\n+        \r\n         {{x.judulKonten}}\r\n         {{x.thumbnail}}\r\n         {{x.isiKonten}}\r\n         {% endfor %}\r\n"
+                },
+                {
+                    "date": 1669996794810,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,8 +4,9 @@\n             List Konten\r\n         </title>\r\n     </head>\r\n     <body>\r\n+        <table\r\n         {% for x in posts %}\r\n         \r\n         {{x.judulKonten}}\r\n         {{x.thumbnail}}\r\n"
+                },
+                {
+                    "date": 1669996801504,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,13 +4,9 @@\n             List Konten\r\n         </title>\r\n     </head>\r\n     <body>\r\n-        <table\r\n-        {% for x in posts %}\r\n-        \r\n-        {{x.judulKonten}}\r\n-        {{x.thumbnail}}\r\n-        {{x.isiKonten}}\r\n-        {% endfor %}\r\n+        <table>\r\n+\r\n+        </table>\r\n     </body>\r\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1669996812120,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,8 +5,14 @@\n         </title>\r\n     </head>\r\n     <body>\r\n         <table>\r\n+            \r\n+            {% for x in posts %}\r\n \r\n+            {{x.judulKonten}}\r\n+            {{x.thumbnail}}\r\n+            {{x.isiKonten}}\r\n+            {% endfor %}\r\n         </table>\r\n     </body>\r\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1669996823514,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,11 @@\n         </title>\r\n     </head>\r\n     <body>\r\n         <table>\r\n-            \r\n+            <tr>\r\n+                <th>Judul Konten</th>\r\n+            </tr>\r\n             {% for x in posts %}\r\n \r\n             {{x.judulKonten}}\r\n             {{x.thumbnail}}\r\n"
+                },
+                {
+                    "date": 1669996832536,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,8 +7,9 @@\n     <body>\r\n         <table>\r\n             <tr>\r\n                 <th>Judul Konten</th>\r\n+                <th>URL Thumbnail</th>\r\n             </tr>\r\n             {% for x in posts %}\r\n \r\n             {{x.judulKonten}}\r\n"
+                },
+                {
+                    "date": 1669996842630,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,8 +8,9 @@\n         <table>\r\n             <tr>\r\n                 <th>Judul Konten</th>\r\n                 <th>URL Thumbnail</th>\r\n+                <th>Isi Konten</th>\r\n             </tr>\r\n             {% for x in posts %}\r\n \r\n             {{x.judulKonten}}\r\n"
+                },
+                {
+                    "date": 1669996850353,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n                 <th>URL Thumbnail</th>\r\n                 <th>Isi Konten</th>\r\n             </tr>\r\n             {% for x in posts %}\r\n-\r\n+            <\r\n             {{x.judulKonten}}\r\n             {{x.thumbnail}}\r\n             {{x.isiKonten}}\r\n             {% endfor %}\r\n"
+                },
+                {
+                    "date": 1669996857132,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n                 <th>URL Thumbnail</th>\r\n                 <th>Isi Konten</th>\r\n             </tr>\r\n             {% for x in posts %}\r\n-            <\r\n+            \r\n             {{x.judulKonten}}\r\n             {{x.thumbnail}}\r\n             {{x.isiKonten}}\r\n             {% endfor %}\r\n"
+                },
+                {
+                    "date": 1669996862846,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,13 +10,11 @@\n                 <th>Judul Konten</th>\r\n                 <th>URL Thumbnail</th>\r\n                 <th>Isi Konten</th>\r\n             </tr>\r\n-            {% for x in posts %}\r\n+            <tr>\r\n+\r\n+            </tr>\r\n             \r\n-            {{x.judulKonten}}\r\n-            {{x.thumbnail}}\r\n-            {{x.isiKonten}}\r\n-            {% endfor %}\r\n         </table>\r\n     </body>\r\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1669996868117,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,10 +11,15 @@\n                 <th>URL Thumbnail</th>\r\n                 <th>Isi Konten</th>\r\n             </tr>\r\n             <tr>\r\n+                {% for x in posts %}\r\n+            \r\n+                {{x.judulKonten}}\r\n+                {{x.thumbnail}}\r\n+                {{x.isiKonten}}\r\n+                {% endfor %}\r\n \r\n             </tr>\r\n-            \r\n         </table>\r\n     </body>\r\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1669996874768,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n             </tr>\r\n             <tr>\r\n                 {% for x in posts %}\r\n             \r\n-                {{x.judulKonten}}\r\n+                <td></td>{{x.judulKonten}}\r\n                 {{x.thumbnail}}\r\n                 {{x.isiKonten}}\r\n                 {% endfor %}\r\n \r\n"
+                },
+                {
+                    "date": 1669996881537,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,10 +13,10 @@\n             </tr>\r\n             <tr>\r\n                 {% for x in posts %}\r\n             \r\n-                <td></td>{{x.judulKonten}}\r\n-                {{x.thumbnail}}\r\n+                <td>{{x.judulKonten}}</td>\r\n+                <td></td>{{x.thumbnail}}\r\n                 {{x.isiKonten}}\r\n                 {% endfor %}\r\n \r\n             </tr>\r\n"
+                },
+                {
+                    "date": 1669996889021,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,10 +14,10 @@\n             <tr>\r\n                 {% for x in posts %}\r\n             \r\n                 <td>{{x.judulKonten}}</td>\r\n-                <td></td>{{x.thumbnail}}\r\n-                {{x.isiKonten}}\r\n+                <td>{{x.thumbnail}}</td>\r\n+                <td></td>{{x.isiKonten}}\r\n                 {% endfor %}\r\n \r\n             </tr>\r\n         </table>\r\n"
+                },
+                {
+                    "date": 1669996897081,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,12 +12,11 @@\n                 <th>Isi Konten</th>\r\n             </tr>\r\n             <tr>\r\n                 {% for x in posts %}\r\n-            \r\n                 <td>{{x.judulKonten}}</td>\r\n                 <td>{{x.thumbnail}}</td>\r\n-                <td></td>{{x.isiKonten}}\r\n+                <td>{{x.isiKonten}}</td>\r\n                 {% endfor %}\r\n \r\n             </tr>\r\n         </table>\r\n"
+                },
+                {
+                    "date": 1669996957963,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,16 +9,16 @@\n             <tr>\r\n                 <th>Judul Konten</th>\r\n                 <th>URL Thumbnail</th>\r\n                 <th>Isi Konten</th>\r\n+                <th></th>\r\n             </tr>\r\n             <tr>\r\n                 {% for x in posts %}\r\n                 <td>{{x.judulKonten}}</td>\r\n                 <td>{{x.thumbnail}}</td>\r\n                 <td>{{x.isiKonten}}</td>\r\n                 {% endfor %}\r\n-\r\n             </tr>\r\n         </table>\r\n     </body>\r\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1669996963531,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n             <tr>\r\n                 <th>Judul Konten</th>\r\n                 <th>URL Thumbnail</th>\r\n                 <th>Isi Konten</th>\r\n-                <th></th>\r\n+                <th>Delete</th>\r\n             </tr>\r\n             <tr>\r\n                 {% for x in posts %}\r\n                 <td>{{x.judulKonten}}</td>\r\n"
+                },
+                {
+                    "date": 1669997125144,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,8 +16,9 @@\n                 {% for x in posts %}\r\n                 <td>{{x.judulKonten}}</td>\r\n                 <td>{{x.thumbnail}}</td>\r\n                 <td>{{x.isiKonten}}</td>\r\n+                <td>Ini </td>\r\n                 {% endfor %}\r\n             </tr>\r\n         </table>\r\n     </body>\r\n"
+                },
+                {
+                    "date": 1669997201201,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,14 +11,14 @@\n                 <th>URL Thumbnail</th>\r\n                 <th>Isi Konten</th>\r\n                 <th>Delete</th>\r\n             </tr>\r\n-            <tr>\r\n+            \r\n                 {% for x in posts %}\r\n                 <td>{{x.judulKonten}}</td>\r\n                 <td>{{x.thumbnail}}</td>\r\n                 <td>{{x.isiKonten}}</td>\r\n-                <td>Ini </td>\r\n+                <td>Ini delete</td>\r\n                 {% endfor %}\r\n             </tr>\r\n         </table>\r\n     </body>\r\n"
+                },
+                {
+                    "date": 1669997211156,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,14 +12,14 @@\n                 <th>Isi Konten</th>\r\n                 <th>Delete</th>\r\n             </tr>\r\n             \r\n-                {% for x in posts %}\r\n-                <td>{{x.judulKonten}}</td>\r\n-                <td>{{x.thumbnail}}</td>\r\n-                <td>{{x.isiKonten}}</td>\r\n-                <td>Ini delete</td>\r\n-                {% endfor %}\r\n-            </tr>\r\n+            {% for x in posts %}\r\n+            <td>{{x.judulKonten}}</td>\r\n+            <td>{{x.thumbnail}}</td>\r\n+            <td>{{x.isiKonten}}</td>\r\n+            <td>Ini delete</td>\r\n+            {% endfor %}\r\n+            \r\n         </table>\r\n     </body>\r\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1669997217174,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,8 +13,11 @@\n                 <th>Delete</th>\r\n             </tr>\r\n             \r\n             {% for x in posts %}\r\n+            <tr>\r\n+                \r\n+            </tr>\r\n             <td>{{x.judulKonten}}</td>\r\n             <td>{{x.thumbnail}}</td>\r\n             <td>{{x.isiKonten}}</td>\r\n             <td>Ini delete</td>\r\n"
+                },
+                {
+                    "date": 1669997223415,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,14 +14,13 @@\n             </tr>\r\n             \r\n             {% for x in posts %}\r\n             <tr>\r\n-                \r\n+                <td>{{x.judulKonten}}</td>\r\n+                <td>{{x.thumbnail}}</td>\r\n+                <td>{{x.isiKonten}}</td>\r\n+                <td>Ini delete</td>\r\n             </tr>\r\n-            <td>{{x.judulKonten}}</td>\r\n-            <td>{{x.thumbnail}}</td>\r\n-            <td>{{x.isiKonten}}</td>\r\n-            <td>Ini delete</td>\r\n             {% endfor %}\r\n             \r\n         </table>\r\n     </body>\r\n"
+                },
+                {
+                    "date": 1669997405166,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,8 +4,10 @@\n             List Konten\r\n         </title>\r\n     </head>\r\n     <body>\r\n+      <form action='' method='POST'>\r\n+\r\n         <table>\r\n             <tr>\r\n                 <th>Judul Konten</th>\r\n                 <th>URL Thumbnail</th>\r\n"
+                },
+                {
+                    "date": 1669997420697,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,6 +24,7 @@\n             </tr>\r\n             {% endfor %}\r\n             \r\n         </table>\r\n+        <form\r\n     </body>\r\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1669997426026,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,7 +24,7 @@\n             </tr>\r\n             {% endfor %}\r\n             \r\n         </table>\r\n-        <form\r\n+    </form>\r\n     </body>\r\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1669997436600,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n             List Konten\r\n         </title>\r\n     </head>\r\n     <body>\r\n-      <form action='' method='POST'>\r\n+        <form action='' method='POST'>\r\n \r\n         <table>\r\n             <tr>\r\n                 <th>Judul Konten</th>\r\n@@ -24,7 +24,7 @@\n             </tr>\r\n             {% endfor %}\r\n             \r\n         </table>\r\n-    </form>\r\n+        </form>\r\n     </body>\r\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1669997443061,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,26 +5,25 @@\n         </title>\r\n     </head>\r\n     <body>\r\n         <form action='' method='POST'>\r\n-\r\n-        <table>\r\n-            <tr>\r\n-                <th>Judul Konten</th>\r\n-                <th>URL Thumbnail</th>\r\n-                <th>Isi Konten</th>\r\n-                <th>Delete</th>\r\n-            </tr>\r\n-            \r\n-            {% for x in posts %}\r\n-            <tr>\r\n-                <td>{{x.judulKonten}}</td>\r\n-                <td>{{x.thumbnail}}</td>\r\n-                <td>{{x.isiKonten}}</td>\r\n-                <td>Ini delete</td>\r\n-            </tr>\r\n-            {% endfor %}\r\n-            \r\n-        </table>\r\n+            <table>\r\n+                <tr>\r\n+                    <th>Judul Konten</th>\r\n+                    <th>URL Thumbnail</th>\r\n+                    <th>Isi Konten</th>\r\n+                    <th>Delete</th>\r\n+                </tr>\r\n+                \r\n+                {% for x in posts %}\r\n+                <tr>\r\n+                    <td>{{x.judulKonten}}</td>\r\n+                    <td>{{x.thumbnail}}</td>\r\n+                    <td>{{x.isiKonten}}</td>\r\n+                    <td>Ini delete</td>\r\n+                </tr>\r\n+                {% endfor %}\r\n+                \r\n+            </table>\r\n         </form>\r\n     </body>\r\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1669997451815,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n             List Konten\r\n         </title>\r\n     </head>\r\n     <body>\r\n-        <form action='' method='POST'>\r\n+        <form action='{%%}' method='POST'>\r\n             <table>\r\n                 <tr>\r\n                     <th>Judul Konten</th>\r\n                     <th>URL Thumbnail</th>\r\n"
+                },
+                {
+                    "date": 1669997652095,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,26 +4,24 @@\n             List Konten\r\n         </title>\r\n     </head>\r\n     <body>\r\n-        <form action='{%%}' method='POST'>\r\n-            <table>\r\n-                <tr>\r\n-                    <th>Judul Konten</th>\r\n-                    <th>URL Thumbnail</th>\r\n-                    <th>Isi Konten</th>\r\n-                    <th>Delete</th>\r\n-                </tr>\r\n-                \r\n-                {% for x in posts %}\r\n-                <tr>\r\n-                    <td>{{x.judulKonten}}</td>\r\n-                    <td>{{x.thumbnail}}</td>\r\n-                    <td>{{x.isiKonten}}</td>\r\n-                    <td>Ini delete</td>\r\n-                </tr>\r\n-                {% endfor %}\r\n-                \r\n-            </table>\r\n-        </form>\r\n+        <table>\r\n+            <tr>\r\n+                <th>Judul Konten</th>\r\n+                <th>URL Thumbnail</th>\r\n+                <th>Isi Konten</th>\r\n+                <th>Delete</th>\r\n+            </tr>\r\n+            \r\n+            {% for x in posts %}\r\n+            <tr>\r\n+                <td>{{x.judulKonten}}</td>\r\n+                <td>{{x.thumbnail}}</td>\r\n+                <td>{{x.isiKonten}}</td>\r\n+                <td>Ini delete</td>\r\n+            </tr>\r\n+            {% endfor %}\r\n+            \r\n+        </table>\r\n     </body>\r\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1669997659822,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n             <tr>\r\n                 <td>{{x.judulKonten}}</td>\r\n                 <td>{{x.thumbnail}}</td>\r\n                 <td>{{x.isiKonten}}</td>\r\n-                <td><</td>\r\n+                <td><></td>\r\n             </tr>\r\n             {% endfor %}\r\n             \r\n         </table>\r\n"
+                },
+                {
+                    "date": 1669997665702,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n             <tr>\r\n                 <td>{{x.judulKonten}}</td>\r\n                 <td>{{x.thumbnail}}</td>\r\n                 <td>{{x.isiKonten}}</td>\r\n-                <td><a href></td>\r\n+                <td><a href=></td>\r\n             </tr>\r\n             {% endfor %}\r\n             \r\n         </table>\r\n"
                 }
             ],
             "date": 1669995373862,

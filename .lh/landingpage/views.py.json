@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 33,
+            "activePatchIndex": 34,
             "patches": [
                 {
                     "date": 1669991308769,
@@ -140,6 +140,10 @@
                 {
                     "date": 1669995745110,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n     posts = Konten.objects.all()\r\n     response = {'posts':posts}\r\n     return render(request,'konten_list.html',response)\r\n \r\n-@login_required(login_url=)\r\n+@login_required(login_url='')\r\n def add_konten(request):\r\n     form = KontenForm(request.POST or None)\r\n     if (form.is_valid() and request.method=='POST'):\r\n         form.save()\r\n"
+                },
+                {
+                    "date": 1669998164976,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,8 +24,8 @@\n     return render(request,'konten_form.html',response)\r\n \r\n @login_required(login_url='/hello')\r\n def delete_konten(request, idKonten):\r\n-    data = Konten.objects.get(idKonten=id)\r\n+    data = Konten.objects.get(idKonten=idKonten)\r\n     if (request.method == 'POST'):\r\n         data.delete()\r\n     return redirect('konten_list.html')\r\n"
                 }
             ],
             "date": 1669991308769,

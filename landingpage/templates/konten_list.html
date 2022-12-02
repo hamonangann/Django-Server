@@ -5,10 +5,25 @@
         </title>
     </head>
     <body>
-        {% for x in posts %}
-        {{x.judulKonten}}
-        {{x.thumbnail}}
-        {{x.isiKonten}}
-        {% endfor %}
+        <table border: 1px solid black>
+            <tr>
+                <th>Id</th>
+                <th>Judul Konten</th>
+                <th>URL Thumbnail</th>
+                <th>Isi Konten</th>
+                <th>Delete</th>
+            </tr>
+            
+            {% for x in posts %}
+            <tr>
+                <td>{{x.idKonten}}</td>
+                <td>{{x.judulKonten}}</td>
+                <td>{{x.thumbnail}}</td>
+                <td>{{x.isiKonten}}</td>
+                <td><a href="delete/{{x.idKonten}}">delete</a></td>
+            </tr>
+            {% endfor %}
+            
+        </table>
     </body>
 </html>
