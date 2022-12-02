@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <title>Blogs</title>
+    </head>
+    <body>
+        <div class="container mt-5">
+            <h1 class="fw-bold">My blog~</h1>
+        
+            {% if blogs %}
+              {% for blog in blogs %}
+                <hr/>
+                <article>
+                  <header class="mb-4">
+                    <h3><a href="/blog/{{blog.id}}">{{blog.judul}}</a></h3>
+                  </header>
+                  <section class="mb-5">
+                    <p>{{blog.isi_artikel|linebreaksbr|truncatewords:50}}</p>
+                  </section>
+                </article>
+                
+              {% endfor %}
+            {% else %}
+              <p>Coming soon! <a href="..">Return to profile</a></p>
+            {% endif %}
+        
+          </div>        
+    </body>
+</html>

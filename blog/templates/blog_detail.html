@@ -1,0 +1,24 @@
+<html>
+    <head>>
+        <title>Blog</title>
+    </head>
+    <body>
+        <div class="container mt-5">
+            {% if blog %}
+            
+              <article>
+                <header class="mb-4">
+                  <h1 class="fw-bold">{{blog.judul}}</h3>
+                </header>
+                <section class="mb-5">
+                  <p>{{blog.isi_artikel|linebreaksbr}}</p>
+                </section>
+              </article>
+              <hr/>
+   
+            {% else %}
+              <p>Coming soon! <a href="/">Return to profile</a></p>
+            {% endif %}
+          </div>          
+    </body>
+</html>

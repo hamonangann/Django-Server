@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <title>Add blog</title>
+    </head>
+    <body>
+        <h1>Login</h1>
+        <form action='' method='POST'>
+            <table>
+            {% csrf_token %}
+                <tr>
+                <td>Judul:</td>
+                <td>{{form.judul}}</td>
+                </tr>
+                <tr>
+                <td>Isi Artikel:</td>
+                <td>{{form.isi_artikel}}</td>
+                </tr>
+            </table>
+            </br><input type="submit" value="submit">
+        </form>
+    </body>
+</html>
