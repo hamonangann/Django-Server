@@ -1,0 +1,42 @@
+<html>
+  <head>
+    <title>Form Promo</title>
+  </head>
+  <body>
+    
+    <div>
+      <h1>Add Promo</h1>
+      <form action='' method='POST'>
+          <table>
+          {% csrf_token %}
+            <tr>
+              <td>Nama Promo :</td>
+              <td>{{form.namaPromo}}</td>
+            </tr>
+            <tr>
+              <td>Gambar Promo :</td>
+              <td>{{form.gambarPromo}}</td>
+            </tr>
+            <tr>
+                <td>Details Promo :</td>
+                <td>{{form.detailsPromo}}</td>
+            </tr>
+            <tr>
+                <td>Tanggal Berakhir :</td>
+                <td>{{form.tanggalExp}}</td>
+            </tr>
+          </table>
+        </br><input type="submit" value="submit">
+      </form>
+
+      {% if messages %}
+        <ul class="messages">
+          {% for message in messages %}
+          <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    </div>
+
+  </body>
+</html>
