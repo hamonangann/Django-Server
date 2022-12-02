@@ -1,0 +1,150 @@
+{
+    "sourceFile": "landingpage/views.py",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 33,
+            "patches": [
+                {
+                    "date": 1669991308769,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1669991318055,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n from django.shortcuts import render\r\n-from .models import Artikel\r\n-from .forms import ArtikelForm\r\n+from .models import Konten\r\n+from .forms import KontenForm\r\n from django.http.response import HttpResponse, HttpResponseRedirect\r\n from django.contrib.auth.decorators import login_required\r\n from django.core import serializers\r\n from django.http import JsonResponse\r\n"
+                },
+                {
+                    "date": 1669991346633,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,4 +9,6 @@\n from django.views.decorators.csrf import csrf_exempt\r\n import json\r\n \r\n # Create your views here.\r\n+\r\n+def add_\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1669991353911,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,5 +10,5 @@\n import json\r\n \r\n # Create your views here.\r\n \r\n-def add_\n\\ No newline at end of file\n+def add_konten(request)\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1669991359569,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,5 +10,6 @@\n import json\r\n \r\n # Create your views here.\r\n \r\n-def add_konten(request)\n\\ No newline at end of file\n+def add_konten(request):\r\n+    form = Konten\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1669991366324,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,5 +11,5 @@\n \r\n # Create your views here.\r\n \r\n def add_konten(request):\r\n-    form = Konten\n\\ No newline at end of file\n+    form = KontenForm(request.POST)\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1669991374547,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,5 +11,5 @@\n \r\n # Create your views here.\r\n \r\n def add_konten(request):\r\n-    form = KontenForm(request.POST)\n\\ No newline at end of file\n+    form = KontenForm(request.POST or None)\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1669991380426,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,5 +11,6 @@\n \r\n # Create your views here.\r\n \r\n def add_konten(request):\r\n-    form = KontenForm(request.POST or None)\n\\ No newline at end of file\n+    form = KontenForm(request.POST or None)\r\n+    if \n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1669991400123,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,5 +12,5 @@\n # Create your views here.\r\n \r\n def add_konten(request):\r\n     form = KontenForm(request.POST or None)\r\n-    if \n\\ No newline at end of file\n+    if (form.is_valid() and request.method==)\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1669991411218,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,5 +12,7 @@\n # Create your views here.\r\n \r\n def add_konten(request):\r\n     form = KontenForm(request.POST or None)\r\n-    if (form.is_valid() and request.method==)\n\\ No newline at end of file\n+    if (form.is_valid() and request.method=='POST'):\r\n+        form.save()\r\n+        return Http\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1669991417174,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,5 +14,6 @@\n def add_konten(request):\r\n     form = KontenForm(request.POST or None)\r\n     if (form.is_valid() and request.method=='POST'):\r\n         form.save()\r\n-        return Http\n\\ No newline at end of file\n+        return HttpResponseRedirect('')\r\n+        \n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1669991423468,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,5 +15,6 @@\n     form = KontenForm(request.POST or None)\r\n     if (form.is_valid() and request.method=='POST'):\r\n         form.save()\r\n         return HttpResponseRedirect('')\r\n-        \n\\ No newline at end of file\n+    \r\n+    response\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1669991429926,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,5 +16,5 @@\n     if (form.is_valid() and request.method=='POST'):\r\n         form.save()\r\n         return HttpResponseRedirect('')\r\n     \r\n-    response\n\\ No newline at end of file\n+    response = {'form'}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1669991438054,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,5 +16,6 @@\n     if (form.is_valid() and request.method=='POST'):\r\n         form.save()\r\n         return HttpResponseRedirect('')\r\n     \r\n-    response = {'form'}\n\\ No newline at end of file\n+    response = {'form':form}\r\n+    return render\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1669991443299,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,5 +17,5 @@\n         form.save()\r\n         return HttpResponseRedirect('')\r\n     \r\n     response = {'form':form}\r\n-    return render\n\\ No newline at end of file\n+    return render(request,'')\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1669991448767,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,5 +17,5 @@\n         form.save()\r\n         return HttpResponseRedirect('')\r\n     \r\n     response = {'form':form}\r\n-    return render(request,'')\n\\ No newline at end of file\n+    return render(request,'konten_form.html')\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1669991472706,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,12 +10,13 @@\n import json\r\n \r\n # Create your views here.\r\n \r\n+#login required\r\n def add_konten(request):\r\n     form = KontenForm(request.POST or None)\r\n     if (form.is_valid() and request.method=='POST'):\r\n         form.save()\r\n         return HttpResponseRedirect('')\r\n     \r\n     response = {'form':form}\r\n\\ No newline at end of file\n-    return render(request,'konten_form.html')\n+    return render(request,'konten_form.html',response)\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1669991901975,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,5 +18,7 @@\n         form.save()\r\n         return HttpResponseRedirect('')\r\n     \r\n     response = {'form':form}\r\n-    return render(request,'konten_form.html',response)\n\\ No newline at end of file\n+    return render(request,'konten_form.html',response)\r\n+\r\n+def \n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1669991909484,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,5 +20,6 @@\n     \r\n     response = {'form':form}\r\n     return render(request,'konten_form.html',response)\r\n \r\n-def \n\\ No newline at end of file\n+def index(request):\r\n+    \n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1669991917883,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,5 +21,5 @@\n     response = {'form':form}\r\n     return render(request,'konten_form.html',response)\r\n \r\n def index(request):\r\n-    \n\\ No newline at end of file\n+    posts = Konten.objects.all()\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1669992029177,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,5 +21,6 @@\n     response = {'form':form}\r\n     return render(request,'konten_form.html',response)\r\n \r\n def index(request):\r\n-    posts = Konten.objects.all()\n\\ No newline at end of file\n+    posts = Konten.objects.all()\r\n+    \r\n"
+                },
+                {
+                    "date": 1669992037398,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,5 +22,5 @@\n     return render(request,'konten_form.html',response)\r\n \r\n def index(request):\r\n     posts = Konten.objects.all()\r\n-    \r\n+    response = {'posts'}\r\n"
+                },
+                {
+                    "date": 1669992046579,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,5 +22,6 @@\n     return render(request,'konten_form.html',response)\r\n \r\n def index(request):\r\n     posts = Konten.objects.all()\r\n-    response = {'posts'}\r\n+    response = {'posts':posts}\r\n+    return render()\r\n"
+                },
+                {
+                    "date": 1669992056951,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,5 +23,5 @@\n \r\n def index(request):\r\n     posts = Konten.objects.all()\r\n     response = {'posts':posts}\r\n-    return render()\r\n+    return render(request,'konten_list.html')\r\n"
+                },
+                {
+                    "date": 1669992156966,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,8 +20,5 @@\n     \r\n     response = {'form':form}\r\n     return render(request,'konten_form.html',response)\r\n \r\n-def index(request):\r\n-    posts = Konten.objects.all()\r\n-    response = {'posts':posts}\r\n-    return render(request,'konten_list.html')\r\n+\r\n"
+                },
+                {
+                    "date": 1669992178303,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,10 +8,14 @@\n from django.core.paginator import Paginator\r\n from django.views.decorators.csrf import csrf_exempt\r\n import json\r\n \r\n-# Create your views here.\r\n \r\n+def index(request):\r\n+    posts = Konten.objects.all()\r\n+    response = {'posts':posts}\r\n+    return render(request,'konten_list.html',response)\r\n+\r\n #login required\r\n def add_konten(request):\r\n     form = KontenForm(request.POST or None)\r\n     if (form.is_valid() and request.method=='POST'):\r\n@@ -20,5 +24,7 @@\n     \r\n     response = {'form':form}\r\n     return render(request,'konten_form.html',response)\r\n \r\n-\r\n+#login required\r\n+def delete_konten(request):\r\n+    \r\n"
+                },
+                {
+                    "date": 1669992691339,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,7 +24,7 @@\n     \r\n     response = {'form':form}\r\n     return render(request,'konten_form.html',response)\r\n \r\n-#login required\r\n-def delete_konten(request):\r\n-    \r\n+# #login required\r\n+# def delete_konten(request):\r\n+\r\n"
+                },
+                {
+                    "date": 1669995039695,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n     posts = Konten.objects.all()\r\n     response = {'posts':posts}\r\n     return render(request,'konten_list.html',response)\r\n \r\n-#login required\r\n+@login_required\r\n def add_konten(request):\r\n     form = KontenForm(request.POST or None)\r\n     if (form.is_valid() and request.method=='POST'):\r\n         form.save()\r\n"
+                },
+                {
+                    "date": 1669995046840,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n     posts = Konten.objects.all()\r\n     response = {'posts':posts}\r\n     return render(request,'konten_list.html',response)\r\n \r\n-@login_required\r\n+@login_required()\r\n def add_konten(request):\r\n     form = KontenForm(request.POST or None)\r\n     if (form.is_valid() and request.method=='POST'):\r\n         form.save()\r\n@@ -24,7 +24,7 @@\n     \r\n     response = {'form':form}\r\n     return render(request,'konten_form.html',response)\r\n \r\n-# #login required\r\n+@login_required()\r\n # def delete_konten(request):\r\n \r\n"
+                },
+                {
+                    "date": 1669995071145,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,6 +25,6 @@\n     response = {'form':form}\r\n     return render(request,'konten_form.html',response)\r\n \r\n @login_required()\r\n-# def delete_konten(request):\r\n-\r\n+def delete_konten(request):\r\n+    \r\n"
+                },
+                {
+                    "date": 1669995107960,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,8 @@\n from django.http.response import HttpResponse, HttpResponseRedirect\r\n from django.contrib.auth.decorators import login_required\r\n from django.core import serializers\r\n from django.http import JsonResponse\r\n-from django.core.paginator import Paginator\r\n from django.views.decorators.csrf import csrf_exempt\r\n import json\r\n \r\n \r\n@@ -26,5 +25,5 @@\n     return render(request,'konten_form.html',response)\r\n \r\n @login_required()\r\n def delete_konten(request):\r\n-    \r\n+\r\n"
+                },
+                {
+                    "date": 1669995114443,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,7 +23,7 @@\n     \r\n     response = {'form':form}\r\n     return render(request,'konten_form.html',response)\r\n \r\n-@login_required()\r\n-def delete_konten(request):\r\n+# @login_required()\r\n+# def delete_konten(request):\r\n \r\n"
+                },
+                {
+                    "date": 1669995170729,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,8 @@\n from django.http.response import HttpResponse, HttpResponseRedirect\r\n from django.contrib.auth.decorators import login_required\r\n from django.core import serializers\r\n from django.http import JsonResponse\r\n-from django.views.decorators.csrf import csrf_exempt\r\n import json\r\n \r\n \r\n def index(request):\r\n"
+                },
+                {
+                    "date": 1669995745110,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n     posts = Konten.objects.all()\r\n     response = {'posts':posts}\r\n     return render(request,'konten_list.html',response)\r\n \r\n-@login_required(login_url=)\r\n+@login_required(login_url='')\r\n def add_konten(request):\r\n     form = KontenForm(request.POST or None)\r\n     if (form.is_valid() and request.method=='POST'):\r\n         form.save()\r\n"
+                }
+            ],
+            "date": 1669991308769,
+            "name": "Commit-0",
+            "content": "from django.shortcuts import render\r\nfrom .models import Artikel\r\nfrom .forms import ArtikelForm\r\nfrom django.http.response import HttpResponse, HttpResponseRedirect\r\nfrom django.contrib.auth.decorators import login_required\r\nfrom django.core import serializers\r\nfrom django.http import JsonResponse\r\nfrom django.core.paginator import Paginator\r\nfrom django.views.decorators.csrf import csrf_exempt\r\nimport json\r\n\r\n# Create your views here.\r\n"
+        }
+    ]
+}

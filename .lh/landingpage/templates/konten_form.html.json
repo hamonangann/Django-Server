@@ -1,0 +1,54 @@
+{
+    "sourceFile": "landingpage/templates/konten_form.html",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 9,
+            "patches": [
+                {
+                    "date": 1669995179041,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1669995189578,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <html>\r\n   <head>\r\n-    <title>Lambda</title>\r\n+    <title>Add Konten</title>\r\n   </head>\r\n   <body>\r\n     \r\n     <div>\r\n"
+                },
+                {
+                    "date": 1669995200003,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,12 +1,12 @@\n <html>\r\n   <head>\r\n-    <title>Add Konten</title>\r\n+    <title>Form Konten</title>\r\n   </head>\r\n   <body>\r\n     \r\n     <div>\r\n-      <h1>Login</h1>\r\n+      <h1></h1>\r\n       <form action='' method='POST'>\r\n           <table>\r\n           {% csrf_token %}\r\n             <tr>\r\n"
+                },
+                {
+                    "date": 1669995208846,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n   </head>\r\n   <body>\r\n     \r\n     <div>\r\n-      <h1></h1>\r\n+      <h1>Add Konten</h1>\r\n       <form action='' method='POST'>\r\n           <table>\r\n           {% csrf_token %}\r\n             <tr>\r\n"
+                },
+                {
+                    "date": 1669995217161,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n       <form action='' method='POST'>\r\n           <table>\r\n           {% csrf_token %}\r\n             <tr>\r\n-              <td>Username:</td>\r\n+              <td>Judul Konten:</td>\r\n               <td>{{form.username}}</td>\r\n             </tr>\r\n             <tr>\r\n               <td>Password:</td>\r\n"
+                },
+                {
+                    "date": 1669995236566,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n               <td>Judul Konten:</td>\r\n               <td>{{form.username}}</td>\r\n             </tr>\r\n             <tr>\r\n-              <td>Password:</td>\r\n+              <td>URL Thumbnail:</td>\r\n               <td>{{form.password}}</td>\r\n             </tr>\r\n           </table>\r\n         </br><input type=\"submit\" value=\"submit\">\r\n"
+                },
+                {
+                    "date": 1669995246158,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,8 +16,12 @@\n             <tr>\r\n               <td>URL Thumbnail:</td>\r\n               <td>{{form.password}}</td>\r\n             </tr>\r\n+            <tr>\r\n+                <td>URL Thumbnail:</td>\r\n+                <td>{{form.password}}</td>\r\n+              </tr>\r\n           </table>\r\n         </br><input type=\"submit\" value=\"submit\">\r\n       </form>\r\n \r\n"
+                },
+                {
+                    "date": 1669995293031,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,16 +10,16 @@\n           <table>\r\n           {% csrf_token %}\r\n             <tr>\r\n               <td>Judul Konten:</td>\r\n-              <td>{{form.username}}</td>\r\n+              <td>{{form.judulKonten}}</td>\r\n             </tr>\r\n             <tr>\r\n               <td>URL Thumbnail:</td>\r\n               <td>{{form.password}}</td>\r\n             </tr>\r\n             <tr>\r\n-                <td>URL Thumbnail:</td>\r\n+                <td>Isi Konten:</td>\r\n                 <td>{{form.password}}</td>\r\n               </tr>\r\n           </table>\r\n         </br><input type=\"submit\" value=\"submit\">\r\n"
+                },
+                {
+                    "date": 1669995300045,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n               <td>{{form.judulKonten}}</td>\r\n             </tr>\r\n             <tr>\r\n               <td>URL Thumbnail:</td>\r\n-              <td>{{form.password}}</td>\r\n+              <td>{{form.thumbnail}}</td>\r\n             </tr>\r\n             <tr>\r\n                 <td>Isi Konten:</td>\r\n                 <td>{{form.password}}</td>\r\n"
+                },
+                {
+                    "date": 1669995311741,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n               <td>{{form.thumbnail}}</td>\r\n             </tr>\r\n             <tr>\r\n                 <td>Isi Konten:</td>\r\n-                <td>{{form.password}}</td>\r\n+                <td>{{form.isiKonten}}</td>\r\n               </tr>\r\n           </table>\r\n         </br><input type=\"submit\" value=\"submit\">\r\n       </form>\r\n"
+                }
+            ],
+            "date": 1669995179041,
+            "name": "Commit-0",
+            "content": "<html>\r\n  <head>\r\n    <title>Lambda</title>\r\n  </head>\r\n  <body>\r\n    \r\n    <div>\r\n      <h1>Login</h1>\r\n      <form action='' method='POST'>\r\n          <table>\r\n          {% csrf_token %}\r\n            <tr>\r\n              <td>Username:</td>\r\n              <td>{{form.username}}</td>\r\n            </tr>\r\n            <tr>\r\n              <td>Password:</td>\r\n              <td>{{form.password}}</td>\r\n            </tr>\r\n          </table>\r\n        </br><input type=\"submit\" value=\"submit\">\r\n      </form>\r\n\r\n      {% if messages %}\r\n        <ul class=\"messages\">\r\n          {% for message in messages %}\r\n          <li{% if message.tags %} class=\"{{ message.tags }}\"{% endif %}>{{ message }}</li>\r\n          {% endfor %}\r\n        </ul>\r\n      {% endif %}\r\n    </div>\r\n\r\n  </body>\r\n</html>"
+        }
+    ]
+}

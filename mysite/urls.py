@@ -21,5 +21,6 @@ import authpage.urls as authpage
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('hello/', hello.index),
-    path('hallway/', include(authpage))
+    path('hallway/', include(authpage)),
+    path('', include("landingpage.urls"))
 ]

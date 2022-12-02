@@ -1,0 +1,22 @@
+{
+    "sourceFile": "landingpage/admin.py",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1669991211713,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1669991217351,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,4 @@\n from django.contrib import admin\r\n-from artikel.models import Artikel\r\n+from .models import Konten\r\n \r\n admin.site.register(Artikel)\r\n"
+                }
+            ],
+            "date": 1669991211713,
+            "name": "Commit-0",
+            "content": "from django.contrib import admin\r\nfrom artikel.models import Artikel\r\n\r\nadmin.site.register(Artikel)\r\n"
+        }
+    ]
+}

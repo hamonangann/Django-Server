@@ -1,0 +1,34 @@
+{
+    "sourceFile": "landingpage/forms.py",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 4,
+            "patches": [
+                {
+                    "date": 1669990559388,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1669990571175,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,1 @@\n-from django import forms\n\\ No newline at end of file\n+from django import forms\r\n"
+                },
+                {
+                    "date": 1669991152888,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,8 @@\n from django import forms\r\n+from .models import Artikel\r\n+\r\n+\r\n+class ArtikelForm(forms.ModelForm):\r\n+    class Meta:\r\n+        model = Artikel\r\n+        fields ='__all__'\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1669991166040,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n from django import forms\r\n-from .models import Artikel\r\n+from .models import Konten\r\n \r\n \r\n class ArtikelForm(forms.ModelForm):\r\n     class Meta:\r\n"
+                },
+                {
+                    "date": 1669991173279,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n from django import forms\r\n from .models import Konten\r\n \r\n \r\n-class ArtikelForm(forms.ModelForm):\r\n+class KontenForm(forms.ModelForm):\r\n     class Meta:\r\n-        model = Artikel\r\n+        model = Konten\r\n         fields ='__all__'\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1669990559388,
+            "name": "Commit-0",
+            "content": "from django import forms"
+        }
+    ]
+}
