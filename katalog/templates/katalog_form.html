@@ -1,0 +1,33 @@
+<html>
+  <head>
+    <title>Form Katalog</title>
+  </head>
+  <body>
+    
+    <div>
+      <h1>Add Katalog</h1>
+      <form action='' method='POST'>
+          <table>
+          {% csrf_token %}
+            <tr>
+              <td>Judul Katalog:</td>
+              <td>{{form.judulKatalog}}</td>
+            </tr>
+            <tr>
+              <td>URL Thumbnail:</td>
+              <td>{{form.thumbnail}}</td>
+            </tr>
+            <tr>
+                <td>Deskripsi Katalog:</td>
+                <td>{{form.deskripsiKatalog}}</td>
+              </tr>
+            <tr>
+                <td>Harga Katalog:</td>
+                <td>{{form.hargaKatalog}}</td>
+            </tr>
+          </table>
+        </br><input type="submit" value="submit">
+      </form>
+
+  </body>
+</html>

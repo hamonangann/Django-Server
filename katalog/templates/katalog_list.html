@@ -1,0 +1,15 @@
+<html>
+    <head>
+        <title>
+            List Katalog
+        </title>
+    </head>
+    <body>
+        {% for x in posts %}
+        {{x.judulKatalog}}
+        {{x.thumbnail}}
+        {{x.hargaKatalog}}
+        {{x.isiKatalog}}
+        {% endfor %}
+    </body>
+</html>
