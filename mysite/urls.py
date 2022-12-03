@@ -27,4 +27,5 @@ urlpatterns = [
     path('', include("katalog.urls")),
     path('promo/', include(promo)),
     path('blog/', include(blog)),
+    path('', include("landingpage.urls"))
 ]
