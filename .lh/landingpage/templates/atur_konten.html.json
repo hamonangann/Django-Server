@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 5,
+            "activePatchIndex": 13,
             "patches": [
                 {
                     "date": 1670030251496,
@@ -28,6 +28,38 @@
                 {
                     "date": 1670030515232,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,8 +24,8 @@\n             </tr>\r\n             {% endfor %}\r\n         </table>\r\n         <p>\r\n-            <a href=\"aturKonten/add\">Add member</a>\r\n+            <a href=\"aturKonten/add\">Add Konten</a>\r\n             </p>\r\n     </body>\r\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1670030985309,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,17 +15,17 @@\n             </tr>\r\n             \r\n             {% for x in posts %}\r\n             <tr>\r\n-                <td>{{x.idKonten}}</td>\r\n+                <td><a href=''{{x.idKonten}}</td>\r\n                 <td>{{x.judulKonten}}</td>\r\n                 <td>{{x.thumbnail}}</td>\r\n                 <td>{{x.isiKonten}}</td>\r\n                 <td><a href=\"delete/{{x.idKonten}}\">delete</a></td>\r\n             </tr>\r\n             {% endfor %}\r\n         </table>\r\n         <p>\r\n-            <a href=\"aturKonten/add\">Add Konten</a>\r\n+            <a href=\"aturKonten/add\">Tambah Konten</a>\r\n             </p>\r\n     </body>\r\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1670031031563,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n             </tr>\r\n             \r\n             {% for x in posts %}\r\n             <tr>\r\n-                <td><a href=''{{x.idKonten}}</td>\r\n+                <td><a href='konten/{{}}'{{x.idKonten}}</td>\r\n                 <td>{{x.judulKonten}}</td>\r\n                 <td>{{x.thumbnail}}</td>\r\n                 <td>{{x.isiKonten}}</td>\r\n                 <td><a href=\"delete/{{x.idKonten}}\">delete</a></td>\r\n"
+                },
+                {
+                    "date": 1670031040143,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n             </tr>\r\n             \r\n             {% for x in posts %}\r\n             <tr>\r\n-                <td><a href='konten/{{}}'{{x.idKonten}}</td>\r\n+                <td><a href='konten/{{x.idKonten}}'{{x.idKonten}}</td>\r\n                 <td>{{x.judulKonten}}</td>\r\n                 <td>{{x.thumbnail}}</td>\r\n                 <td>{{x.isiKonten}}</td>\r\n                 <td><a href=\"delete/{{x.idKonten}}\">delete</a></td>\r\n"
+                },
+                {
+                    "date": 1670031047557,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n             </tr>\r\n             \r\n             {% for x in posts %}\r\n             <tr>\r\n-                <td><a href='konten/{{x.idKonten}}'{{x.idKonten}}</td>\r\n+                <td>{{x.idKonten}}</td>\r\n                 <td>{{x.judulKonten}}</td>\r\n                 <td>{{x.thumbnail}}</td>\r\n                 <td>{{x.isiKonten}}</td>\r\n                 <td><a href=\"delete/{{x.idKonten}}\">delete</a></td>\r\n"
+                },
+                {
+                    "date": 1670031056141,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n             \r\n             {% for x in posts %}\r\n             <tr>\r\n                 <td>{{x.idKonten}}</td>\r\n-                <td>{{x.judulKonten}}</td>\r\n+                <td><a href>{{x.judulKonten}}</td>\r\n                 <td>{{x.thumbnail}}</td>\r\n                 <td>{{x.isiKonten}}</td>\r\n                 <td><a href=\"delete/{{x.idKonten}}\">delete</a></td>\r\n             </tr>\r\n"
+                },
+                {
+                    "date": 1670031061355,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n             \r\n             {% for x in posts %}\r\n             <tr>\r\n                 <td>{{x.idKonten}}</td>\r\n-                <td><a href>{{x.judulKonten}}</td>\r\n+                <td><a href=\"'konten/{{}}\">{{x.judulKonten}}</td>\r\n                 <td>{{x.thumbnail}}</td>\r\n                 <td>{{x.isiKonten}}</td>\r\n                 <td><a href=\"delete/{{x.idKonten}}\">delete</a></td>\r\n             </tr>\r\n"
+                },
+                {
+                    "date": 1670031076750,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n             \r\n             {% for x in posts %}\r\n             <tr>\r\n                 <td>{{x.idKonten}}</td>\r\n-                <td><a href=\"'konten/{{}}\">{{x.judulKonten}}</td>\r\n+                <td><a href=\"'konten/{{x.idKonten}}\">{{x.judulKonten}}</a></td>\r\n                 <td>{{x.thumbnail}}</td>\r\n                 <td>{{x.isiKonten}}</td>\r\n                 <td><a href=\"delete/{{x.idKonten}}\">delete</a></td>\r\n             </tr>\r\n"
+                },
+                {
+                    "date": 1670031088933,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n             \r\n             {% for x in posts %}\r\n             <tr>\r\n                 <td>{{x.idKonten}}</td>\r\n-                <td><a href=\"'konten/{{x.idKonten}}\">{{x.judulKonten}}</a></td>\r\n+                <td><a href=\"konten/{{x.idKonten}}\">{{x.judulKonten}}</a></td>\r\n                 <td>{{x.thumbnail}}</td>\r\n                 <td>{{x.isiKonten}}</td>\r\n                 <td><a href=\"delete/{{x.idKonten}}\">delete</a></td>\r\n             </tr>\r\n"
                 }
             ],
             "date": 1670030251496,

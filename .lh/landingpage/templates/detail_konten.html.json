@@ -1,0 +1,66 @@
+{
+    "sourceFile": "landingpage/templates/detail_konten.html",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 12,
+            "patches": [
+                {
+                    "date": 1670031120113,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1670031126799,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,5 @@\n <html>\r\n-    \r\n+    <head>\r\n+        <ti\r\n+    </head>\r\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1670031133490,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,7 @@\n <html>\r\n     <head>\r\n-        <ti\r\n+        <title>\r\n+            Detail\r\n+        </title>\r\n     </head>\r\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1670031142420,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,10 @@\n+<html>\r\n+    <head>\r\n+        <title>\r\n+            Detail Konten\r\n+        </title>\r\n+    </head>\r\n+    <body>\r\n+        \r\n+    </body>\r\n+</html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1670031149002,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,14 +4,7 @@\n             Detail Konten\r\n         </title>\r\n     </head>\r\n     <body>\r\n-        \r\n+        <\r\n     </body>\r\n-</html>\n-<html>\r\n-    <head>\r\n-        <title>\r\n-            Detail\r\n-        </title>\r\n-    </head>\r\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1670031155102,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,7 +4,7 @@\n             Detail Konten\r\n         </title>\r\n     </head>\r\n     <body>\r\n-        <\r\n+        {{}}\r\n     </body>\r\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1670031160899,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,7 +4,7 @@\n             Detail Konten\r\n         </title>\r\n     </head>\r\n     <body>\r\n-        {{}}\r\n+        {{konten.judulKonten}}\r\n     </body>\r\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1670031169314,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,6 +5,7 @@\n         </title>\r\n     </head>\r\n     <body>\r\n         {{konten.judulKonten}}\r\n+        {{konten.}}\r\n     </body>\r\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1670031176818,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,7 +5,7 @@\n         </title>\r\n     </head>\r\n     <body>\r\n         {{konten.judulKonten}}\r\n-        {{konten.}}\r\n+        \r\n     </body>\r\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1670031182560,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,8 +4,8 @@\n             Detail Konten\r\n         </title>\r\n     </head>\r\n     <body>\r\n-        {{konten.judulKonten}}\r\n-        \r\n+        {{konten.judulKonten}}<\r\n+        <imd\r\n     </body>\r\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1670031195476,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,8 +4,8 @@\n             Detail Konten\r\n         </title>\r\n     </head>\r\n     <body>\r\n-        {{konten.judulKonten}}<\r\n-        <imd\r\n+        {{konten.judulKonten}}<br>\r\n+        {{}}\r\n     </body>\r\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1670031202810,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,7 +5,8 @@\n         </title>\r\n     </head>\r\n     <body>\r\n         {{konten.judulKonten}}<br>\r\n-        {{}}\r\n+        {{konten.thumbnail}}<br>\r\n+        {}\r\n     </body>\r\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1670031222911,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,7 +6,7 @@\n     </head>\r\n     <body>\r\n         {{konten.judulKonten}}<br>\r\n         {{konten.thumbnail}}<br>\r\n-        {}\r\n+        {{konten.isiKonten}}\r\n     </body>\r\n </html>\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1670031120113,
+            "name": "Commit-0",
+            "content": "<html>\r\n    \r\n</html>"
+        }
+    ]
+}

@@ -17,7 +17,7 @@
             {% for x in posts %}
             <tr>
                 <td>{{x.idKonten}}</td>
-                <td>{{x.judulKonten}}</td>
+                <td><a href="konten/{{x.idKonten}}">{{x.judulKonten}}</a></td>
                 <td>{{x.thumbnail}}</td>
                 <td>{{x.isiKonten}}</td>
                 <td><a href="delete/{{x.idKonten}}">delete</a></td>

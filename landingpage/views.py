@@ -16,6 +16,11 @@ def indexAturKonten(request):
     response = {'posts':posts}
     return render(request,'atur_konten.html',response)
 
+def detail_konten(request, idKonten):
+    konten = Konten.objects.all().get(idKonten=idKonten)
+    response = {'konten':konten}
+    return render(request,'detail_konten.html',response)
+
 @login_required(login_url='/hello')
 def add_konten(request):
     form = KontenForm(request.POST or None)
