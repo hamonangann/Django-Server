@@ -19,7 +19,7 @@ def add_promo(request):
     if (form.is_valid() and request.method=='POST'):
         form.save()
         return HttpResponseRedirect('')
-    
+
     response = {'form':form}
     return render(request,'promo_form.html',response)
 
