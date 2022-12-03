@@ -24,6 +24,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('hello/', hello.index),
     path('hallway/', include(authpage)),
+    path('', include("katalog.urls")),
     path('promo/', include(promo)),
     path('blog/', include(blog)),
 ]
