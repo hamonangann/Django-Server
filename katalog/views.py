@@ -6,6 +6,7 @@ from django.contrib.auth.decorators import login_required
 from django.core import serializers
 from django.http import JsonResponse
 import json
+from django.contrib import messages
 
 
 def index(request):
@@ -18,7 +19,8 @@ def add_katalog(request):
     form = KatalogForm(request.POST or None)
     if (form.is_valid() and request.method=='POST'):
         form.save()
-        return HttpResponseRedirect('')
+        # messages.success(request, '.')
+        return HttpResponseRedirect('/list_katalog')
     
     response = {'form':form}
     return render(request,'katalog_form.html',response)

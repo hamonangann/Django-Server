@@ -9,3 +9,4 @@ class Katalog(models.Model):
     deskripsiKatalog = models.TextField()
     hargaKatalog = models.CharField(max_length=30)
 
+
