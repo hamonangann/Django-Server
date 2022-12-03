@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 11,
+            "activePatchIndex": 12,
             "patches": [
                 {
                     "date": 1669990541391,
@@ -52,6 +52,10 @@
                 {
                     "date": 1669997490427,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,6 +3,6 @@\n \r\n urlpatterns = [\r\n     path('',index,name='indexKonten'),\r\n     path('add',add_konten,name='addKonten'),\r\n-    path\r\n+    path()\r\n ]\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1670030191184,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,6 +4,6 @@\n urlpatterns = [\r\n     path('',index,name='indexKonten'),\r\n     path('add',add_konten,name='addKonten'),\r\n     path('delete/<int:idKonten>',delete_konten, name='deleteKonten'),\r\n-    path('/')\r\n+    path('')\r\n ]\n\\ No newline at end of file\n"
                 }
             ],
             "date": 1669990541391,
