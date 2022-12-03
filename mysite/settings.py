@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'hello',
     'authpage',
     'Promo',
+    'blog',
 ]
 
 MIDDLEWARE = [
