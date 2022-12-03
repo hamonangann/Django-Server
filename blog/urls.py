@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import get_all_blogs, get_blog_by_url, post_comment, put_comment, delete_comment
+from .views import list_blogs, get_blog_by_url, add_blog, delete_blog
 
 urlpatterns = [
     path('', list_blogs, name='list_blogs'),
