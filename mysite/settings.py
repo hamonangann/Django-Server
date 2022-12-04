@@ -51,7 +51,8 @@ INSTALLED_APPS = [
     'katalog',
     'Promo',
     'blog',
-    'landingpage'
+    'landingpage',
+    'kontak',
 ]
 
 MIDDLEWARE = [
