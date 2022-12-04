@@ -45,6 +45,7 @@ lib64/
 parts/
 sdist/
 var/
+venv/
 *.egg-info/
 .installed.cfg
 *.egg
@@ -83,7 +84,12 @@ target/
 *.pot
 *.pyc
 __pycache__/
+__pycache__
 local_settings.py
 
 .env
 db.sqlite3
+
+## IntellIJ ##
+.idea
+.lh
