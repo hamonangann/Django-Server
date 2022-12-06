@@ -18,10 +18,15 @@ from django.urls import path, include
 import hello.views as hello
 import authpage.urls as authpage
 import Promo.urls as promo
+import blog.urls as blog
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('hello/', hello.index),
     path('hallway/', include(authpage)),
-    path('promo/', include(promo))
+    path('katalog/', include("katalog.urls")),
+    path('promo/', include(promo)),
+    path('blog/', include(blog)),
+    path('', include("landingpage.urls")),
+    path('kontak/', include("kontak.urls"))
 ]
