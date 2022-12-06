@@ -1,7 +1,8 @@
 from django.urls import path
-from .views import index, add_promo
+from .views import index, renderJSON, create_promo
 
 urlpatterns = [
     path('',index,name='indexPromo'),
-    path('add_promo',add_promo,name='addPromo')
+    path('add_promo', create_promo, name="addPromo"),
+    path('api_promo', renderJSON, name = "apiPromo")
 ]

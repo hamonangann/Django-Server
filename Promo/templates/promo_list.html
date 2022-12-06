@@ -6,28 +6,131 @@
 
 {% block content %}
     <div class = "promo-container">
-        
-        {% for x in posts %}
-        {{x.namaPromo}}
-        {{x.gambarPromo}}
-        {{x.detailsPromo}}
-        {{x.tanggalExp}}
-        {% endfor %}
-    </div>
-{% endblock content %}
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Add a Promo
+          </button>
+          
+          <!-- Modal -->
+          <form  id="form-anjay">
+          <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <table>
+                    {% csrf_token %}
+                      <tr>
+                        <td>Nama Promo :</td>
+                        <td>{{form.namaPromo}}</td>
+                      </tr>
+                      <tr>
+                        <td>Gambar Promo :</td>
+                        <td>{{form.gambarPromo}}</td>
+                      </tr>
+                      <tr>
+                          <td>Details Promo :</td>
+                          <td>{{form.detailsPromo}}</td>
+                      </tr>
+                      <tr>
+                          <td>Tanggal Berakhir :</td>
+                          <td>{{form.tanggalExp}}</td>
+                      </tr>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                  <button id = "close-button" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <button type="button" id="btn-sbmt" class="btn btn-primary" type="submit">Save changes</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          </div>
+        </form>
 
-<!-- <html>
-    <head>
-        <title>
-            List Promo
-        </title>
-    </head>
-    <body>
-        {% for x in posts %}
-        {{x.namaPromo}}
-        {{x.gambarPromo}}
         {{x.detailsPromo}}
-        {{x.tanggalExp}}
-        {% endfor %}
-    </body>
-</html> -->
+        
+        
+        <div id="list-promo">
+            {% for x in posts %}
+            <div class="card" style="width: 18rem;">
+                <img src= {{x.gambarPromo}} class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">{{x.namaPromo}}</h5>
+                  <p class="card-text">Valid until : {{x.tanggalExp}}</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+<script>
+const insertTableData = (result) => {
+  return $("#list-promo").append(`
+  <div class="card" style="width: 18rem;">
+                <img src=${result.fields.gambarPromo} class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">${result.fields.namaPromo}</h5>
+                  <p class="card-text">Valid until : ${result.fields.tanggalExp}</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>`)
+}
+
+$( "#btn-sbmt" ).click(function() {
+      // mendapatkan value dari masing-masing tag input
+      namaPromo = $("input[name='namaPromo']").val()
+      gambarPromo = $("input[name='gambarPromo']").val()
+      detailsPromo = $("textarea[name='detailsPromo']").val()
+      tanggalExp = $("input[name='tanggalExp']").val()
+
+      console.log(namaPromo);
+      console.log(gambarPromo);
+      console.log(detailsPromo);
+      console.log(tanggalExp);
+
+      if(!namaPromo || !gambarPromo || !detailsPromo || !tanggalExp) {
+        alert("Silakan isi seluruh form!")
+        return
+      }
+      console.log(namaPromo)
+    
+      $.ajax({
+        type: 'POST',
+        url: `/promo/add_promo`,
+        data: {
+          // add request body with input value and csrf token
+          'csrfmiddlewaretoken': $("input[name=csrfmiddlewaretoken]").val(),
+          'nama_promo': namaPromo,
+          'gambar_promo': gambarPromo,
+          'details_promo': detailsPromo,
+          'tanggal_berakhir': tanggalExp
+        },
+        success: function (response) {
+          // kita kosongin inputnya lagi abis berhasil nembak
+          $('#exampleModal').modal('toggle');
+        $("input[name='namaPromo']").val("")
+        $("input[name='gambarPromo']").val("")
+        $("textarea[name='detailsPromo']").val("")
+        $("input[name='tanggalExp']").val("")
+
+          $("list-promo").empty();
+          $.ajax({
+              url: "/promo/api_promo", 
+              success: function(results){
+                  results.map((result)=>{
+                    insertTableData(result);
+                  }
+                )
+              }
+            }
+          );
+        },
+      })
+});
+
+    </script>
+{% endblock content %}
