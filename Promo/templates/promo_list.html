@@ -1,4 +1,22 @@
-<html>
+{% extends 'base.html' %}
+{% load static %}
+{% block meta %}
+    <title>Form Promo</title>
+{% endblock meta %}
+
+{% block content %}
+    <div class = "promo-container">
+        
+        {% for x in posts %}
+        {{x.namaPromo}}
+        {{x.gambarPromo}}
+        {{x.detailsPromo}}
+        {{x.tanggalExp}}
+        {% endfor %}
+    </div>
+{% endblock content %}
+
+<!-- <html>
     <head>
         <title>
             List Promo
@@ -12,4 +30,4 @@
         {{x.tanggalExp}}
         {% endfor %}
     </body>
-</html>
+</html> -->

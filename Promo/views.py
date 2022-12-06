@@ -5,7 +5,7 @@ from django.contrib.auth.decorators import login_required
 from django.core import serializers
 from django.http import JsonResponse
 import json
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 
 
 def index(request):
@@ -18,7 +18,7 @@ def add_promo(request):
     form = PromoForm(request.POST or None)
     if (form.is_valid() and request.method=='POST'):
         form.save()
-        return HttpResponseRedirect('')
+        return redirect("/promo/")
 
     response = {'form':form}
     return render(request,'promo_form.html',response)
