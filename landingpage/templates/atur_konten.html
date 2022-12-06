@@ -1,31 +1,55 @@
-<html>
-    <head>
-        <title>
-            List Konten
-        </title>
-    </head>
-    <body>
-        <table border: 1px solid black>
-            <tr>
-                <th>Id</th>
-                <th>Judul Konten</th>
-                <th>URL Thumbnail</th>
-                <th>Isi Konten</th>
-                <th>Delete</th>
-            </tr>
-            
-            {% for x in posts %}
+{% extends 'base.html' %}
+{% load static %}
+{% block meta %}
+    <title>Atur Konten</title>
+{% endblock meta %}
+
+{% block content %}
+<style>
+    table, th{
+        border:1px solid black;
+        table-layout: fixed;
+        margin: auto;
+    }
+    td{
+        border:1px solid black;
+        word-wrap:break-word;
+    }
+    .button-container-div {
+        width: 300px;
+        height: 300px;
+        display: flex;
+        justify-content: right;
+        align-items: right;
+    }
+</style>
+<div>
+    <div class="row" style="padding:13px">
+        <div class="col d-flex justify-content-start">
+            <h2>Atur Konten</h2>
+        </div>
+        <div class="col d-flex justify-content-end">
+            <a href="aturKonten/add">
+                <button class="btn btn-primary" type="button">Add Content</button>
+            </a>
+        </div>
+    </div>
+    <br>  
+    <table style="width: 70%;">
+        <tr>
+            <th>Id</th>
+            <th>Content Title</th>
+            <th>URL Thumbnail</th>
+            <th>Delete</th>
+        </tr>
+        {% for x in posts %}
             <tr>
                 <td>{{x.idKonten}}</td>
                 <td><a href="konten/{{x.idKonten}}">{{x.judulKonten}}</a></td>
                 <td>{{x.thumbnail}}</td>
-                <td>{{x.isiKonten}}</td>
                 <td><a href="delete/{{x.idKonten}}">delete</a></td>
             </tr>
             {% endfor %}
-        </table>
-        <p>
-            <a href="aturKonten/add">Tambah Konten</a>
-            </p>
-    </body>
-</html>
+    </table>
+</div>
+{% endblock content %}
