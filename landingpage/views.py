@@ -8,7 +8,8 @@ from django.urls import reverse
 
 def index(request):
     posts = Konten.objects.all()
-    response = {'posts':posts}
+    isAdmin = request.user.is_authenticated
+    response = {'posts':posts, 'isAdmin':isAdmin}
     return render(request,'landing_page.html',response)
 
 def indexAturKonten(request):

@@ -1,10 +1,64 @@
-<html>
-    <head>
-        <title>
-            Landing Page
-        </title>
-    </head>
-    <body>
-        <h1>Ini Landing Page</h1>
-    </body>
-</html>
+{% extends 'base.html' %}
+{% load static %}
+{% block meta %}
+    <title>Landing Page</title>
+{% endblock meta %}
+
+{% block content %}
+<style>
+    .box{
+        width: 75%;
+        background-color: #F5D6D0;
+        margin: auto;
+        text-align: center;
+        padding: 50px;
+    }
+    .content-list{
+        display: flex;
+        gap: 23px;
+        flex-wrap: wrap;
+        padding: 20px;
+    }
+</style>
+<div>
+    <h2 style="font-size:25px; text-align: center;">WELCOME TO</h1><br> 
+    <h1 style="text-align:center; font-size: 30px;font-weight: bold;">JARKOMOLLA WEBSITE</h1>
+    <br>
+    <div class="box">
+        <h3>About Us</h3>
+        <p>Needs-O Beauty is a brand engaged in the beauty sector. Our products focus not only on outer beauty, but also on inner beauty. Through this site, we introduce various kinds of products that have helped our customers in overcoming skin problems, as well as various articles as references in caring for your skin.</p>
+        <p>Our products have been committed to producing pure and healthy products for your convenience. With our reliable experience, we produce our own formula that can give freshness to your skin.</p>
+    </div>
+    <hr>
+    {% if isAdmin %}
+    <div class="row" style="padding:13px">
+        <div class="col d-flex justify-content-center">
+        </div>
+        <div class="col d-flex justify-content-center">
+            <h2 style="font-size:25px; text-align: center;">Beauty Content</h2>
+        </div>
+        
+        <div class="col d-flex justify-content-end">
+            <a href="/aturKonten">
+                <button class="btn btn-primary" type="button">Edit Content</button>
+            </a>
+        </div> 
+    </div>
+    {% else %}
+    <h2 style="font-size:25px; text-align: center;">Beauty Content</h2>
+    {% endif %}
+    
+    <p style="text-align:center; font-size: 15px;">Increase your beauty knowledge and confidence through our article resources</p>
+    <div class="content-list">
+        {% for x in posts %}
+        <div class="card my-3 post-box" style="width: 18rem; height: 18rem;">
+            <img class="card-img-top" src={{x.thumbnail}} alt="Card image" style="width:286px; height:200px">
+            <header style="padding: 10px 10px">
+                <a href="konten/{{x.idKonten}}" class="font-title">{{x.judulKonten}}</a>
+            </header>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock content %}
+

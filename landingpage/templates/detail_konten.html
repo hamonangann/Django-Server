@@ -1,12 +1,15 @@
-<html>
-    <head>
-        <title>
-            Detail Konten
-        </title>
-    </head>
-    <body>
-        {{konten.judulKonten}}<br>
-        {{konten.thumbnail}}<br>
-        {{konten.isiKonten}}
-    </body>
-</html>
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="article-form">
+    <div class="article_header">
+        <h2 style="text-align: center">{{konten.judulKonten}}</h2>
+    </div>
+    <div class="col d-flex justify-content-center">
+        <img src="{{konten.thumbnail}}" width="650px">
+    </div>
+    <br>
+    <p style="text-align: justify; padding: 30px;">{{konten.isiKonten}}</p>
+    
+</div>
+{% endblock content %}
