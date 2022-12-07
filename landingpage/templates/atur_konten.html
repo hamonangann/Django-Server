@@ -47,7 +47,7 @@
                 <td>{{x.idKonten}}</td>
                 <td><a href="konten/{{x.idKonten}}">{{x.judulKonten}}</a></td>
                 <td>{{x.thumbnail}}</td>
-                <td><a href="delete/{{x.idKonten}}">delete</a></td>
+                <td><a href="delete/{{x.idKonten}}" onclick="return confirm('Are tou sure?');">delete</a></td>
             </tr>
             {% endfor %}
     </table>
