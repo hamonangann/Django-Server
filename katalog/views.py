@@ -7,6 +7,7 @@ from django.core import serializers
 from django.http import JsonResponse
 import json
 from django.contrib import messages
+from django.http import HttpResponse, Http404
 
 
 def index(request):
@@ -18,9 +19,20 @@ def index(request):
 def add_katalog(request):
     form = KatalogForm(request.POST or None)
     if (form.is_valid() and request.method=='POST'):
-        form.save()
-        # messages.success(request, '.')
-        return HttpResponseRedirect('/list_katalog')
+        try :
+            form.save()
+            # messages.success(request, '.')
+            return render(request, 'katalog_forms.html', {"success": "valid", 'form': form})
+        except :
+            return render(request, 'katalog_forms.html', {"success": "invalid", 'form': form})
 
-    response = {'form':form}
-    return render(request,'katalog_form.html',response)
+    response = {'form':form, "success":"None"}
+    return render(request,'katalog_forms.html',response)
+
+def detail_katalog(request, idKatalog):
+    try:
+        katalog = Katalog.objects.get(pk=idKatalog)
+    except Katalog.DoesNotExist:
+        raise Http404("Katalog not found")
+
+    return render(request, "detail_katalog.html", context={"katalog":katalog} )

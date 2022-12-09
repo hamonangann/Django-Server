@@ -1,16 +1,85 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block content %}
+
 <html>
   <head>
-    <title>Form Katalog</title>
+    <title>Form Catalog</title>
+    
+<script>
+  window.onload = function() {
+    const btnsubmit = document.getElementById('submit-btn')
+  
+    btnsubmit.addEventListener('click', (e) => {
+      console.log("deyuna cakep")
+      // $("#exampleModal").modal('show');
+      // e.preventDefault()
+    })
+  }
+  </script>
   </head>
   <body>
-    
-    <div>
-      <h1>Add Katalog</h1>
-      <form action='' method='POST'>
+    <!--Notification-->
+    {% if success == "valid" %}
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+      <h4 class="alert-heading">Success!</h4>
+      <p>New catalog has been saved</p>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    {% elif success == "invalid" %}
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+      <h4 class="alert-heading">Aw, shot!</h4>
+      <p>Failed to save catalog</p>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    {% endif %}
+
+    <div style ="padding: 32px 72px">
+      <div class="text-center ">
+          <div >
+            <h1 style="font-family: poppins ; font-weight: 700; text-align: center; ">Add Catalog</h1>
+              <form action="" method="POST">
+                  <div >
+                      {% csrf_token %}
+      
+                      <label for="nama">Catalog Name:</label><br>
+                      {{form.judulKatalog}} <br>
+          
+                      <br>
+      
+                      <label for="tempatBertugas" style="font-family: poppins;">URL Thumbnail:</label><br>
+                      {{form.thumbnail}} <br>
+      
+                      <br>
+             
+                      <label for="asalUniversitas" style="font-family: poppins;">Price:</label><br>
+                      {{form.hargaKatalog}} <br>
+          
+                      <br>
+      
+                      <label for="pesan" style="font-family: poppins;">Description:</label><br>
+                      {{form.deskripsiKatalog}} <br>
+          
+                      <br>
+      
+                      <input class="btn btn-primary" id="submit-btn" type="submit" value="submit">
+                      
+                      <br>
+                    </form>
+                  </div>
+                 
+          </div>
+      
+      </div>
+   
+    <!-- <div>
+      <h1>Add Catalog</h1>
+      <form method="POST">
           <table>
           {% csrf_token %}
             <tr>
-              <td>Judul Katalog:</td>
+              <td>Catalog Name:</td>
               <td>{{form.judulKatalog}}</td>
             </tr>
             <tr>
@@ -18,50 +87,37 @@
               <td>{{form.thumbnail}}</td>
             </tr>
             <tr>
-                <td>Deskripsi Katalog:</td>
+                <td>Add Description:</td>
                 <td>{{form.deskripsiKatalog}}</td>
               </tr>
             <tr>
-                <td>Harga Katalog:</td>
+                <td>Price:</td>
                 <td>{{form.hargaKatalog}}</td>
             </tr>
           </table>
-        </br><input type="submit" value="submit">
-      </form>
+        </br><input class="btn btn-primary" id="submit-btn" type="submit" value="submit">
+      </br><input class="btn btn-primary" id="submit-btn" type="submit" data-bs-toggle="modal" data-bs-target="#exampleModal" value="submit"> -->
+      
 
-      <!-- {% for message in messages %}
-        {% if message.tags == 'success' %}
-            <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-            <script>
-                $(document).ready(function(){
-                    $("#myMessage").modal('show');
-                });
-            </script>
-        {% endif %}
-      {% endfor %}
-        <div class="modal fade" id="myMessage" tabindex="-1" role="dialog" aria-labelledby="myMessageLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="myMessageLabel"><i class="fas fa-biohazard"></i>&nbsp;&nbsp; Perfect!</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body text-center">
-                        <div class="text-center text-success mt-3">
-                            <i class="far fa-check-circle fa-6x"> </i>
-                        </div>
-                        <br>
-                        <div class="mb-3">Katalog succesfully created!</div>
-                    </div>
-                
-                    <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal" style="width:65px;">Close</button>
-                    </div>
-                </div>
-            </div>
-        </div> -->
-
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"}>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
   </body>
 </html>
+
+{% endblock content %}
