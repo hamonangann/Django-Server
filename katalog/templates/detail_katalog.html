@@ -6,20 +6,26 @@
 <html>
   <head>
     <title>Detail Catalog</title>
+    <link
+    rel="stylesheet"
+    href="{% static 'css/katalog.css' %}"
+    /> 
   </script>
   </head>
-  <body>
-    <div class="article-form">
-        <div class="article_header">
-            <h2 style="text-align: center">{{katalog.judulKonten}}</h2>
+  <body  >
+    <div class="card-description  ">
+        <div>
+            <br>
+            <img src="{{katalog.thumbnail}}" class="img-cover">
         </div>
-        <div class="col d-flex justify-content-center">
-            <img src="{{katalog.thumbnail}}" width="650px">
+        <div>
+            <h2 style="text-align: justify; ">{{katalog.judulKatalog}}</h2>
+            <p style="text-align: justify;">Rp.{{katalog.hargaKatalog}}</p>
+            <p style="text-align: justify; ">{{katalog.deskripsiKatalog}}</p>
+
         </div>
-        <br>
-        <p style="text-align: justify; padding: 30px;">{{katalog.deskripsiKatalog}}</p>
-        
     </div>
+
   </body>
 </html>
 
