@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block content %}
+
+<html>
+  <head>
+    <title>Detail Catalog</title>
+  </script>
+  </head>
+  <body>
+    <div class="article-form">
+        <div class="article_header">
+            <h2 style="text-align: center">{{katalog.judulKonten}}</h2>
+        </div>
+        <div class="col d-flex justify-content-center">
+            <img src="{{katalog.thumbnail}}" width="650px">
+        </div>
+        <br>
+        <p style="text-align: justify; padding: 30px;">{{katalog.deskripsiKatalog}}</p>
+        
+    </div>
+  </body>
+</html>
+
+{% endblock %}
