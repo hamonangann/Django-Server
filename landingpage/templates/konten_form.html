@@ -45,6 +45,10 @@
     color: rgb(53, 53, 53);
     text-decoration: none;
   }
+  .title-button{
+    text-align: center;
+    padding: 1rem;
+  }
   .not-visible{
       display: none;
   }
@@ -56,60 +60,74 @@
       height: 50px;
       border-radius: 50%;
   }
+  .card{
+      width: 75%;
+      /* height: 40%; */
+      background-color: #F5D6D0;
+      margin: auto;
+      /* text-align: center; */
+      padding: 50px;
+  }
 </style>
-<div class="row flex-lg-nowrap text-black mt-4">
-  <div class="col">
-    <div class="row">
-      <div class="col mb-3">
-        <div class="card">
-          <div class="card-body">
-            <div class="e-profile">
-              <div class="tab-content pt-3;">
-                <div class="tab-pane active">
-                  <form class="form" method="POST" action="">
-                    {% csrf_token %}
-                    <div class="row">
-                      <div class="col">
-                        <div class="row mb-4">
-                            <div class="col">
-                              <div class="form-group">
-                                <label>Content Title</label>
-                                <br>
-                                {{form.judulKonten}}
+<div class="box">
+  <div class="row flex-lg-nowrap text-black mt-4">
+    <div class="col">
+      <div class="row">
+        <div class="col mb-3">
+          <div class="card">
+            <div class="title-button">
+              <h1 style="font-weight: 700; color: #E36387; ">Add New Content</h1>
+            </div>
+            <div class="card-body">
+              <div class="e-profile">
+                <div class="tab-content pt-3;">
+                  <div class="tab-pane active">
+                    <form class="form" method="POST" action="">
+                      {% csrf_token %}
+                      <div class="row">
+                        <div class="col">
+                          <div class="row mb-4">
+                              <div class="col">
+                                <div class="form-group">
+                                  <label>Content Title</label>
+                                  <br>
+                                  {{form.judulKonten}}
+                                </div>
                               </div>
-                            </div>
-                        </div>
-                        <div class="row mb-4">
-                            <div class="col">
-                              <div class="form-group">
-                                <label>Description</label>
-                                <br>
-                                {{form.isiKonten}}
-                              </div>
-                            </div>
-                        </div>
-                        <div class="row mb-4">
+                          </div>
+                          <div class="row mb-4">
                             <div class="col">
                               <div class="form-group">
                                 <label>Thumbnail</label>
                                 <br>
-                    	        {{form.thumbnail}}
+                              {{form.thumbnail}}
                              </div>
                             </div>
                         </div>
+                          <div class="row mb-4">
+                              <div class="col">
+                                <div class="form-group">
+                                  <label>Description</label>
+                                  <br>
+                                  {{form.isiKonten}}
+                                </div>
+                              </div>
+                          </div>
+                          
+                        </div>
                       </div>
-                    </div>
-                    <div class="row">
-                      <div class="col d-flex justify-content-start">
-                        <a href="{% url 'aturKonten' %}">
-                          <button class="btn btn-primary" type="button">Back</button>
-                        </a>
+                      <div class="row">
+                        <div class="col d-flex justify-content-start">
+                          <a href="{% url 'aturKonten' %}">
+                            <button class="btn btn-primary" type="button">Back</button>
+                          </a>
+                        </div>
+                        <div class="col d-flex justify-content-end">
+                          <button class="btn btn-primary" type="submit" onclick="return confirm('Are tou sure?');">Add Content</button>
+                        </div>
                       </div>
-                      <div class="col d-flex justify-content-end">
-                        <button class="btn btn-primary" type="submit" onclick="return confirm('Are tou sure?');">Add Content</button>
-                      </div>
-                    </div>
-                  </form>
+                    </form>
+                  </div>
                 </div>
               </div>
             </div>
@@ -119,6 +137,7 @@
     </div>
   </div>
 </div>
+
 
 
 {% endblock content %}
