@@ -4,6 +4,7 @@ from .forms import KontenForm
 from django.http.response import HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
 from django.urls import reverse
+from django.contrib import messages
 
 
 def index(request):
@@ -27,6 +28,7 @@ def add_konten(request):
     form = KontenForm(request.POST or None)
     if (form.is_valid() and request.method=='POST'):
         form.save()
+        messages.success(request,'Success')
         return HttpResponseRedirect(reverse('aturKonten'))
     
     response = {'form':form}
