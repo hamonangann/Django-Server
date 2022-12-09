@@ -32,7 +32,7 @@
   align-items: center;
   justify-content: center;
   margin-bottom: 1rem;
-  gap: 4rem;
+  gap: 8rem;
 }
 
 .card {
@@ -46,11 +46,13 @@
   <div class="title-button">
     <h1 style = "color: #E36387;">Promo</h1>
   </div>
+  {% if request.user.is_authenticated %}
   <div class="custom-btn">
     <button type="button" class="btn btn-primary btn-add-promo" data-bs-toggle="modal" data-bs-target="#exampleModal">
       Add a Promo
     </button>
   </div>
+  {% endif %}
 
   <!-- Modal -->
   <form id="form-anjay">
@@ -83,8 +85,8 @@
             </table>
           </div>
           <div class="modal-footer">
-            <button id="close-button" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" id="btn-sbmt" class="btn btn-primary" type="submit">Save changes</button>
+            <button id="close-button" type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="return confirm('Are you sure?');">Close</button>
+            <button type="button" id="btn-sbmt" class="btn btn-primary" type="submit" onclick="return confirm('Are you sure?');">Save changes</button>
           </div>
         </div>
       </div>
