@@ -1,24 +1,31 @@
-<html>
-    <head>>
-        <title>Blog</title>
-    </head>
-    <body>
-        <div class="container mt-5">
-            {% if blog %}
-            
-              <article>
-                <header class="mb-4">
-                  <h1 class="fw-bold">{{blog.judul}}</h3>
-                </header>
-                <section class="mb-5">
-                  <p>{{blog.isi_artikel|linebreaksbr}}</p>
-                </section>
-              </article>
-              <hr/>
-   
-            {% else %}
-              <p>Coming soon! <a href="/">Return to profile</a></p>
-            {% endif %}
-          </div>          
-    </body>
-</html>
+{% extends 'base.html' %}
+{% load static %}
+{% block meta %}
+  <title>{{blog.judul}} - Blog - Jarkomolla</title>
+{% endblock meta %}
+
+{% block content %}
+<div class="container mt-5">
+{% if blog %}
+  <article>
+    <header class="mb-4">
+      <h1 class="fw-bold">{{blog.judul}}</h3>
+      <img src="{{blog.url_gambar}}" width="640" height="500">
+    </header>
+    <section class="mb-5">
+      <p>{{blog.isi_artikel|linebreaksbr}}</p>
+    </section>
+  </article>
+  <hr/>
+
+  {% else %}
+    <p>Coming soon! <a href="/">Return to profile</a></p>
+  {% endif %}
+
+  {% if request.user.is_authenticated %}
+  <a href="/blog/delete/{{blog.id}}" class="btn btn-primary">
+    Delete this Blog
+  </a>
+  {% endif %}
+</div>          
+{% endblock content %}
