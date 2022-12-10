@@ -6,6 +6,7 @@ from django.core import serializers
 from django.http import JsonResponse
 import json
 from django.shortcuts import redirect, render
+from django.db.models import Max
 import datetime
 
 def index(request):
@@ -27,7 +28,12 @@ def create_promo(request):
         print(datetime.datetime.strptime(tanggal_berakhir, "%Y-%m-%d").date())
 
         list_promo = Promo.objects.all()
-        promo = Promo(len(list_promo) + 1, nama_promo, gambar_promo, details_promo, datetime.datetime.strptime(tanggal_berakhir, "%Y-%m-%d").date())
+        max = 0
+        if (len(list_promo) > 0) :
+            max  = list_promo.aggregate(Max('idPromo'))
+            # print(last)
+            max = max['idPromo__max']
+        promo = Promo(int(max) + 1, nama_promo, gambar_promo, details_promo, datetime.datetime.strptime(tanggal_berakhir, "%Y-%m-%d").date())
         promo.save()
         return HttpResponse(serializers.serialize('json', [promo, ]), content_type='application/json')
 
