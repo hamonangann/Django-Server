@@ -28,5 +28,5 @@ def add_blog(request):
 def delete_blog(request, blog_url):
     blog = Blog.objects.get(pk=blog_url)
     blog.delete()
-    messages.success(request, 'Your comment is successfully deleted :)')
+    messages.success(request, 'Your blog is successfully deleted :)')
     return HttpResponseRedirect('/blog')
