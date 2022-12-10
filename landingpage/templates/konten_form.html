@@ -1,38 +1,143 @@
-<html>
-  <head>
-    <title>Form Konten</title>
-  </head>
-  <body>
-    
-    <div>
-      <h1>Add Konten</h1>
-      <form action='' method='POST'>
-          <table>
-          {% csrf_token %}
-            <tr>
-              <td>Judul Konten:</td>
-              <td>{{form.judulKonten}}</td>
-            </tr>
-            <tr>
-              <td>URL Thumbnail:</td>
-              <td>{{form.thumbnail}}</td>
-            </tr>
-            <tr>
-                <td>Isi Konten:</td>
-                <td>{{form.isiKonten}}</td>
-              </tr>
-          </table>
-        </br><input type="submit" value="submit">
-      </form>
+{% extends 'base.html' %}
+{% load static %}
+{% block meta %}
+    <title>Atur Konten - Needs o Beauty</title>
+{% endblock meta %}
 
-      {% if messages %}
-        <ul class="messages">
-          {% for message in messages %}
-          <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
-          {% endfor %}
-        </ul>
-      {% endif %}
+{% block content %}
+<style>
+  #id_judulKonten{
+    width: 100%
+  }
+  #id_isiKonten{
+    width: 100%
+  }
+  #id_thumbnail{
+    width: 100%
+  }
+  .font-title{
+    font-size: 19px;
+    font-weight: bold;
+    color: black;
+    text-decoration: none;
+  }
+  a:hover{
+    color:black;
+  }
+  .content-button{
+    display: flex;
+    justify-content: center;
+  }
+  .content-form{
+    display: flex; 
+    flex-direction: column; 
+    justify-items: center;
+    gap: 23px
+  }
+  .content-list{
+    display: flex;
+    gap: 23px;
+    flex-wrap: wrap;
+  }
+  .font-content{
+    font-size: 18px;
+    font-family: Serif;
+    color: rgb(53, 53, 53);
+    text-decoration: none;
+  }
+  .title-button{
+    text-align: center;
+    padding: 1rem;
+  }
+  .not-visible{
+      display: none;
+  }
+  .item{
+      text-decoration: none;
+  }
+  .content-img{
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+  }
+  .card{
+      width: 75%;
+      /* height: 40%; */
+      background-color: #F5D6D0;
+      margin: auto;
+      /* text-align: center; */
+      padding: 50px;
+  }
+</style>
+<div class="box">
+  <div class="row flex-lg-nowrap text-black mt-4">
+    <div class="col">
+      <div class="row">
+        <div class="col mb-3">
+          <div class="card">
+            <div class="title-button">
+              <h1 style="font-weight: 700; color: #E36387; ">Add New Content</h1>
+            </div>
+            <div class="card-body">
+              <div class="e-profile">
+                <div class="tab-content pt-3;">
+                  <div class="tab-pane active">
+                    <form class="form" method="POST" action="">
+                      {% csrf_token %}
+                      <div class="row">
+                        <div class="col">
+                          <div class="row mb-4">
+                              <div class="col">
+                                <div class="form-group">
+                                  <label>Content Title</label>
+                                  <br>
+                                  {{form.judulKonten}}
+                                </div>
+                              </div>
+                          </div>
+                          <div class="row mb-4">
+                            <div class="col">
+                              <div class="form-group">
+                                <label>Thumbnail</label>
+                                <br>
+                              {{form.thumbnail}}
+                             </div>
+                            </div>
+                        </div>
+                          <div class="row mb-4">
+                              <div class="col">
+                                <div class="form-group">
+                                  <label>Description</label>
+                                  <br>
+                                  {{form.isiKonten}}
+                                </div>
+                              </div>
+                          </div>
+                          
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col d-flex justify-content-start">
+                          <a href="{% url 'aturKonten' %}">
+                            <button class="btn btn-primary" type="button">Back</button>
+                          </a>
+                        </div>
+                        <div class="col d-flex justify-content-end">
+                          <button class="btn btn-primary" type="submit" onclick="return confirm('Are you sure?');">Add Content</button>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
+</div>
 
-  </body>
-</html>
+
+
+{% endblock content %}

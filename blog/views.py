@@ -19,8 +19,8 @@ def add_blog(request):
     form = BlogForm(request.POST or None)
     if form.is_valid():
         form.save()
+        messages.success(request, "Blog berhasil ditambahkan.")
         return HttpResponseRedirect('/blog')
-    
     # GET Request
     return render(request, 'blog_form.html', {'form': form})
 
@@ -28,5 +28,5 @@ def add_blog(request):
 def delete_blog(request, blog_url):
     blog = Blog.objects.get(pk=blog_url)
     blog.delete()
-    messages.success(request, 'Your comment is successfully deleted :)')
+    messages.success(request, 'Blog berhasil dihapus')
     return HttpResponseRedirect('/blog')

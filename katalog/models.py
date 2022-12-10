@@ -8,3 +8,6 @@ class Katalog(models.Model):
     thumbnail = models.CharField(max_length=500)
     deskripsiKatalog = models.TextField()
     hargaKatalog = models.CharField(max_length=30)
+
+    class Meta:
+        ordering = ['hargaKatalog']

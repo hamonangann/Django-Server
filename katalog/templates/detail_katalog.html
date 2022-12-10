@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block content %}
+
+<html>
+  <head>
+    <title>{{katalog.judulKatalog}} - Needs O Beauty</title>
+    <link
+    rel="stylesheet"
+    href="{% static 'css/katalog.css' %}"
+    /> 
+  </script>
+  </head>
+  <body  >
+    <div class="card-description  ">
+        <div>
+            <br>
+            <img src="{{katalog.thumbnail}}" class="img-cover">
+        </div>
+        <div>
+            <h2 style="text-align: justify; ">{{katalog.judulKatalog}}</h2>
+            <p style="text-align: justify;">Rp.{{katalog.hargaKatalog}}</p>
+            <p style="text-align: justify; ">{{katalog.deskripsiKatalog}}</p>
+
+        </div>
+    </div>
+
+  </body>
+</html>
+
+{% endblock %}
