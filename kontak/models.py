@@ -8,6 +8,9 @@ class Kontak(models.Model):
     email = models.CharField(max_length=50)
     link = models.CharField(max_length=255)
 
+    class Meta:
+        ordering = ['alamat']
+
 
 
 

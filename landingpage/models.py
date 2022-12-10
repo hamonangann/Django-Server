@@ -6,4 +6,7 @@ class Konten(models.Model):
     thumbnail = models.CharField(max_length=500)
     isiKonten = models.TextField()
 
+    class Meta:
+        ordering = ['-idKonten']
+
 
