@@ -7,3 +7,6 @@ class Promo(models.Model) :
     gambarPromo = models.CharField(max_length=500)
     detailsPromo = models.TextField()
     tanggalExp = models.DateField()
+
+    class Meta:
+        ordering = ['tanggalExp']
