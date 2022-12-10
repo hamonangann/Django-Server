@@ -1,22 +1,32 @@
-<html>
-    <head>
-        <title>Add blog</title>
-    </head>
-    <body>
-        <h1>Add new blog</h1>
-        <form action='' method='POST'>
-            <table>
-            {% csrf_token %}
-                <tr>
-                <td>Judul:</td>
-                <td>{{form.judul}}</td>
-                </tr>
-                <tr>
-                <td>Isi Artikel:</td>
-                <td>{{form.isi_artikel}}</td>
-                </tr>
-            </table>
-            </br><input type="submit" value="submit">
-        </form>
-    </body>
-</html>
+{% extends 'base.html' %}
+{% load static %}
+{% block meta %}
+  <title>Admin - Add Blog</title>
+{% endblock meta %}
+
+{% block content %}
+<div class="container mt-5">
+  <div class="title-button">
+    <h1>Add New Blog</h1>
+  </div>
+    
+  <form action='' method='POST'>
+    <table>
+    {% csrf_token %}
+      <tr>
+        <td>Judul:</td>
+        <td>{{form.judul}}</td>
+      </tr>
+      <tr>
+        <td>Isi Artikel:</td>
+        <td>{{form.isi_artikel}}</td>
+      </tr>
+      <tr>
+        <td>URL Gambar:</td>
+        <td>{{form.url_gambar}}</td>
+      </tr>
+    </table>
+    </br><input class="btn btn-primary mb-5" type="submit" value="submit">
+  </form>
+</div>
+{% endblock content %}

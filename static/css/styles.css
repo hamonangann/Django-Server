@@ -15,16 +15,3 @@
     --bs-btn-disabled-border-color: #E36387;
 }
 
-
-body {
-    margin: 0;
-    padding: 0;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-}
-
-footer{
-    margin-top: auto;
-}
-  
